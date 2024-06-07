@@ -26,7 +26,7 @@ namespace AncientMonkey.Challenge
         public virtual WeaponTemplate.Rarity MaxNURarity { get; } = WeaponTemplate.Rarity.Exotic;
         public virtual WeaponTemplate.Rarity MinURarity { get; } = WeaponTemplate.Rarity.Rare;
         public virtual WeaponTemplate.Rarity MaxURarity { get; } = WeaponTemplate.Rarity.Godly;
-        public virtual WeaponTemplate.Rarity MinUURarity { get; } = WeaponTemplate.Rarity.Omega;
+        public virtual WeaponTemplate.Rarity MinUURarity { get; } = WeaponTemplate.Rarity.Epic;
         public virtual WeaponTemplate.Rarity MaxUURarity { get; } = WeaponTemplate.Rarity.Omega;
         public virtual float NewWeaponCostMult { get; } = 1;
         public virtual float StrongerWeaponCostMult { get; } = 1;

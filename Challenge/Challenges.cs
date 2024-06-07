@@ -32,6 +32,8 @@ namespace AncientMonkey.Challenge
         public override Rarity MinNURarity => Rarity.Godly;
         public override Rarity MaxURarity => Rarity.Godly;
         public override Rarity MinURarity => Rarity.Godly;
+        public override Rarity MaxUURarity => Rarity.Godly;
+        public override Rarity MinUURarity => Rarity.Godly;
         public override int DescriptionPanelHeight => 180;
     }
     public class LegendaryMadness : ChallengeTemplate
@@ -45,6 +47,8 @@ namespace AncientMonkey.Challenge
         public override Rarity MinNURarity => Rarity.Legendary;
         public override Rarity MaxURarity => Rarity.Godly;
         public override Rarity MinURarity => Rarity.Legendary;
+        public override Rarity MaxUURarity => Rarity.Omega;
+        public override Rarity MinUURarity => Rarity.Legendary;
         public override int DescriptionPanelHeight => 180;
     }
     public class ExpensiveWeapons : ChallengeTemplate
@@ -104,6 +108,8 @@ namespace AncientMonkey.Challenge
         public override Rarity MinNURarity => Rarity.Common;
         public override Rarity MaxURarity => Rarity.Common;
         public override Rarity MinURarity => Rarity.Common;
+        public override Rarity MaxUURarity => Rarity.Common;
+        public override Rarity MinUURarity => Rarity.Common;
         public override int DescriptionPanelHeight => 180;
     }
     public class EliteChallenge : ChallengeTemplate
@@ -117,6 +123,8 @@ namespace AncientMonkey.Challenge
         public override Rarity MinNURarity => Rarity.Common;
         public override Rarity MaxURarity => Rarity.Common;
         public override Rarity MinURarity => Rarity.Common;
+        public override Rarity MaxUURarity => Rarity.Common;
+        public override Rarity MinUURarity => Rarity.Common;
         public override int DescriptionPanelHeight => 680;
         public override float UpgradeCostMult => 15;
         public override float NewWeaponCostMult => 15;
