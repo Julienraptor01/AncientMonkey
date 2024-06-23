@@ -142,43 +142,43 @@ namespace AncientMonkey.Weapons
 			tower.UpdateRootModel(towerModel);
 		}
 	}
-	public class ArcaneGuardian : WeaponTemplate
-	{
-		public override int SandboxIndex => 6;
-		public override Rarity WeaponRarity => Rarity.Godly;
-		public override string Icon => VanillaSprites.TrueSonGodUpgradeIcon;
-		public override string WeaponName => "Arcane Guardian";
-		public override Sprite CustomIcon => GetSprite("ArcaneGuardianIcon");
-		public override string Description => "Super Monkey 4th path by LynxC";
-		public override bool IsCamo => true;
-		public override bool IsLead => true;
-		public override void EditTower(Tower tower)
-		{
-			var fire = Game.instance.model.GetTowerFromId("MortarMonkey-002").Duplicate<TowerModel>().GetBehavior<AttackModel>().weapons[0].projectile.
-				GetBehavior<CreateProjectileOnExhaustFractionModel>().projectile.GetBehavior<AddBehaviorToBloonModel>().Duplicate();
+	//public class ArcaneGuardian : WeaponTemplate
+	//{
+	//	public override int SandboxIndex => 6;
+	//	public override Rarity WeaponRarity => Rarity.Godly;
+	//	public override string Icon => VanillaSprites.TrueSonGodUpgradeIcon;
+	//	public override string WeaponName => "Arcane Guardian";
+	//	public override Sprite CustomIcon => GetSprite("ArcaneGuardianIcon");
+	//	public override string Description => "Super Monkey 4th path by LynxC";
+	//	public override bool IsCamo => true;
+	//	public override bool IsLead => true;
+	//	public override void EditTower(Tower tower)
+	//	{
+	//		var fire = Game.instance.model.GetTowerFromId("MortarMonkey-002").Duplicate<TowerModel>().GetBehavior<AttackModel>().weapons[0].projectile.
+	//			GetBehavior<CreateProjectileOnExhaustFractionModel>().projectile.GetBehavior<AddBehaviorToBloonModel>().Duplicate();
 
-			fire.GetBehavior<DamageOverTimeModel>().damage += 28;
-			fire.GetBehavior<DamageOverTimeModel>().Interval -= 1f;
+	//		fire.GetBehavior<DamageOverTimeModel>().damage += 28;
+	//		fire.GetBehavior<DamageOverTimeModel>().Interval -= 1f;
 
-			var wpn = Game.instance.model.GetTowerFromId("SuperMonkey-200").GetAttackModel().Duplicate();
-			var towerModel = tower.rootModel.Duplicate().Cast<TowerModel>();
-			wpn.weapons[0].projectile.AddBehavior(fire);
-			wpn.weapons[0].projectile.collisionPasses = new int[] { -1, 0, 1 };
-			wpn.weapons[0].projectile.hasDamageModifiers = true;
-			wpn.weapons[0].projectile.AddBehavior(new DamageModifierForTagModel("aaa", "Moabs", 6, 0, false, false) { name = "MoabModifier_" });
-			wpn.weapons[0].projectile.AddBehavior(new DamageModifierForTagModel("aaa", "Fortified", 2, 0, false, false) { name = "FortifiedModifier_" });
-			wpn.weapons[0].emission = new ArcEmissionModel("ArcEmissionModel_", 4, 0, 45, null, false, false);
-			wpn.weapons[0].projectile.pierce += 8;
-			wpn.weapons[0].projectile.GetDamageModel().damage = 22;
-			wpn.GetDescendants<FilterInvisibleModel>().ForEach(model => model.isActive = false);
-			wpn.weapons[0].projectile.GetDamageModel().immuneBloonProperties = BloonProperties.None;
-			wpn.weapons[0].projectile.ApplyDisplay<EnergyBeam>();
+	//		var wpn = Game.instance.model.GetTowerFromId("SuperMonkey-200").GetAttackModel().Duplicate();
+	//		var towerModel = tower.rootModel.Duplicate().Cast<TowerModel>();
+	//		wpn.weapons[0].projectile.AddBehavior(fire);
+	//		wpn.weapons[0].projectile.collisionPasses = new int[] { -1, 0, 1 };
+	//		wpn.weapons[0].projectile.hasDamageModifiers = true;
+	//		wpn.weapons[0].projectile.AddBehavior(new DamageModifierForTagModel("aaa", "Moabs", 6, 0, false, false) { name = "MoabModifier_" });
+	//		wpn.weapons[0].projectile.AddBehavior(new DamageModifierForTagModel("aaa", "Fortified", 2, 0, false, false) { name = "FortifiedModifier_" });
+	//		wpn.weapons[0].emission = new ArcEmissionModel("ArcEmissionModel_", 4, 0, 45, null, false, false);
+	//		wpn.weapons[0].projectile.pierce += 8;
+	//		wpn.weapons[0].projectile.GetDamageModel().damage = 22;
+	//		wpn.GetDescendants<FilterInvisibleModel>().ForEach(model => model.isActive = false);
+	//		wpn.weapons[0].projectile.GetDamageModel().immuneBloonProperties = BloonProperties.None;
+	//		wpn.weapons[0].projectile.ApplyDisplay<EnergyBeam>();
 
-			wpn.range = tower.towerModel.range;
-			towerModel.AddBehavior(wpn);
-			tower.UpdateRootModel(towerModel);
-		}
-	}
+	//		wpn.range = tower.towerModel.range;
+	//		towerModel.AddBehavior(wpn);
+	//		tower.UpdateRootModel(towerModel);
+	//	}
+	//}
 	public class Godly
 	{
 		public static List<string> GodlyWpn = new List<string>();
